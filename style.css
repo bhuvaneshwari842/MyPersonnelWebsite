@@ -1,0 +1,247 @@
+/* -----------------------------------------------------
+   BASE VARIABLES (DEFAULTS)
+------------------------------------------------------ */
+:root {
+    --font-main: 'Poppins', Arial, sans-serif;
+
+    /* Neutral base colors */
+    --bg: #f5f5f5;
+    --text: #333;
+    --card-bg: #ffffff;
+    --border: #ddd;
+
+    /* Accent (changes per theme) */
+    --accent: #4a3aff;
+    --accent-dark: #2d1fff;
+
+    --radius: 14px;
+    --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-strong: 0 6px 20px rgba(0,0,0,0.15);
+    --transition: 0.3s ease;
+}
+
+body {
+    font-family: var(--font-main);
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background var(--transition), color var(--transition);
+}
+
+/* -----------------------------------------------------
+   THEME OPTIONS
+------------------------------------------------------ */
+
+/* MODERN PROFESSIONAL (Default Blue-Purple) */
+body.theme-modern {
+    --accent: #4a3aff;
+    --accent-dark: #2d1fff;
+    --bg: linear-gradient(to bottom right, #eef0ff, #ffffff);
+    --text: #222;
+}
+
+/* WARM THEME */
+body.theme-warm {
+    --accent: #d96b2b;
+    --accent-dark: #b35320;
+    --bg: linear-gradient(to bottom right, #fff4e8, #ffffff);
+    --text: #3a290e;
+}
+
+/* COOL THEME */
+body.theme-cool {
+    --accent: #2d9ad2;
+    --accent-dark: #1b6b97;
+    --bg: linear-gradient(to bottom right, #e8f6ff, #ffffff);
+    --text: #123146;
+}
+
+/* AESTHETIC PASTEL */
+body.theme-aesthetic {
+    --accent: #b56af0;
+    --accent-dark: #8d49c8;
+    --bg: linear-gradient(to bottom right, #faf5ff, #ffffff);
+    --text: #3c2a47;
+}
+
+/* DARK PROFESSIONAL (Optional) */
+body.theme-dark {
+    --accent: #9e7bff;
+    --accent-dark: #7a5de0;
+    --bg: #1b1b1d;
+    --text: #eaeaea;
+    --card-bg: #262629;
+    --border: #333;
+}
+
+/* -----------------------------------------------------
+   HEADER
+------------------------------------------------------ */
+header {
+    background: var(--accent);
+    color: #fff;
+    padding: 35px 20px;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: var(--shadow-strong);
+}
+
+header h1 {
+    font-size: 2.3rem;
+}
+
+/* -----------------------------------------------------
+   NAVBAR
+------------------------------------------------------ */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 14px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+nav ul li a:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+nav a.active {
+    background: rgba(255,255,255,0.35);
+}
+
+/* -----------------------------------------------------
+   HERO SECTION
+------------------------------------------------------ */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: var(--card-bg);
+    margin: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+}
+
+.hero h2 {
+    font-size: 2rem;
+}
+
+.hero p {
+    opacity: 0.8;
+    font-size: 1.1rem;
+}
+
+/* -----------------------------------------------------
+   CONTENT SECTIONS
+------------------------------------------------------ */
+section {
+    background: var(--card-bg);
+    padding: 35px;
+    margin: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-strong);
+}
+
+/* -----------------------------------------------------
+   TABLE
+------------------------------------------------------ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+th {
+    background: var(--accent);
+    color: #fff;
+    padding: 15px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+td {
+    background: #fafafa;
+    padding: 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+tr:nth-child(even) td {
+    background: #f1f1ff;
+}
+
+/* -----------------------------------------------------
+   COLLAPSIBLE RESUME SECTIONS
+------------------------------------------------------ */
+.toggle {
+    cursor: pointer;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.toggle:hover {
+    color: var(--accent-dark);
+    transform: translateX(4px);
+}
+
+.collapsible .content {
+    display: none;
+    margin-top: 12px;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* -----------------------------------------------------
+   FOOTER
+------------------------------------------------------ */
+footer {
+    background: var(--accent);
+    color: #fff;
+    text-align: center;
+    padding: 18px;
+    margin-top: 40px;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.download-btn {
+    background: #007bff;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.download-btn:hover {
+    background: #0056b3;
+}
+
